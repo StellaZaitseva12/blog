@@ -1,15 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {motion, spring} from 'motion/react';
 import image1 from '../src/img/1.png';
 import image2 from '../src/img/2.png';
 import image3 from '../src/img/3.png';
 import muchacho from '../src/img/muchacho.png';
 
 function App() {
+    
   return (
     <main>
             <div className="container">
-                <header>
+                <motion.header initial={{opacity:0, x: -100}} whileInView={{opacity:1, x:0}}>
                     <ul className="menu">
                         <li>
                             <a href="blogs.html">Blog</a>
@@ -26,9 +28,9 @@ function App() {
                         <span className="line line-2"></span>
                         <span className="line line-3"></span>
                     </button>
-                </header>
+                </motion.header>
                 <div className="content">
-                    <div className="content-left">
+                    <motion.div  initial={{opacity:0, x: -100}} whileInView={{opacity:1, x:0}} className="content-left">
                         <h1>Hi, I am John, <br />Creative Technologist</h1>
                         <p>
                             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
@@ -36,13 +38,13 @@ function App() {
                             veniam consequat sunt nostrud amet.
                         </p>
                         <button>Download Resume</button>
-                    </div>
+                    </motion.div>
                     <div className="content-right">
                         <img src={muchacho} alt="John" />
                     </div>
                 </div>
             </div>
-            <section className="recent">
+<motion.section  initial={{opacity:0, x: -100}} whileInView={{opacity:1, x:0}} transition={{delay:0.2}} className="recent">
                 <div className="container">
                     <div className="recent-header">
                         <h3>Recent posts</h3>
@@ -50,7 +52,7 @@ function App() {
                     </div>
 
                     <div className="recent-container">
-                        <div className="recent-card-container">
+                        <motion.div  initial={{scale:1}} whileHover={{scale:1.1}} className="recent-card-container">
                             <h3>Making a design system from scratch</h3>
                             <div className="description">
                                 <p>12 Feb 2020</p>
@@ -62,9 +64,9 @@ function App() {
                                 sint. Velit officia consequat duis enim velit mollit. Exercitation
                                 veniam consequat sunt nostrud amet.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="recent-card-container">
+                        <motion.div  initial={{scale:1}} whileHover={{scale:1.1}} className="recent-card-container">
                             <h3>Creating pixel perfect icons in Figma</h3>
                             <div className="description">
                                 <p>12 Feb 2020</p>
@@ -76,16 +78,16 @@ function App() {
                                 sint. Velit officia consequat duis enim velit mollit. Exercitation
                                 veniam consequat sunt nostrud amet.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
-            </section>
-            <section className="works">
+            </motion.section>
+<motion.section  initial={{opacity:0, x: -100}} whileInView={{opacity:1, x:0}} transition={{delay:0.4}} className="works">
                 <div className="container">
                     <div className="works-header">
                         <h3>Featured works</h3>
                     </div>
-                    <div className="works-card-container">
+                    <motion.div initial={{x:0}} whileHover={{x:20}} className="works-card-container">
                         <img src={image1} alt="1" />
                         <div className="works-card-description">
                             <h3>Designing Dashboards</h3>
@@ -99,8 +101,8 @@ function App() {
                                 veniam consequat sunt nostrud amet.
                             </p>
                         </div>
-                    </div>
-                    <div className="works-card-container">
+                    </motion.div>
+                    <motion.div initial={{x:0}} whileHover={{x:20}} className="works-card-container">
                         <img src={image2} alt="2" />
                         <div className="works-card-description">
                             <h3>Vibrant Portraits of 2020</h3>
@@ -114,8 +116,8 @@ function App() {
                                 veniam consequat sunt nostrud amet.
                             </p>
                         </div>
-                    </div>
-                    <div className="works-card-container">
+                    </motion.div>
+                    <motion.div initial={{x:0}} whileHover={{x:20}} className="works-card-container">
                         <img src={image3} alt="3" />
                         <div className="works-card-description">
                             <h3>36 Days of Malayalam type</h3>
@@ -129,9 +131,9 @@ function App() {
                                 veniam consequat sunt nostrud amet.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-            </section>
+            </motion.section>
             <footer>
                 <nav>
                     <ul>
